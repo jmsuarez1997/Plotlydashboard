@@ -95,6 +95,7 @@ function buildCharts(sample) {
     var bubbleData = [{
       x: otu_ids,
       y: sample_values,
+      mode: 'markers',
       marker: {
         size: sample_values,
         sizemode:'area'
