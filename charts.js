@@ -18,7 +18,7 @@ function init() {
     buildCharts(firstSample);
     buildMetadata(firstSample);
   });
-}
+};
 
 // Initialize the dashboard
 init();
@@ -28,7 +28,7 @@ function optionChanged(newSample) {
   buildMetadata(newSample);
   buildCharts(newSample);
   
-}
+};
 
 // Demographics Panel 
 function buildMetadata(sample) {
@@ -51,7 +51,7 @@ function buildMetadata(sample) {
     });
 
   });
-}
+};
 
 // 1. Create the buildCharts function.
 function buildCharts(sample) {
@@ -91,4 +91,6 @@ function buildCharts(sample) {
     // 10. Use Plotly to plot the data with the layout. 
     Plotly.newPlot("bar", barData, barLayout);
   });
-}
+};
+
+
