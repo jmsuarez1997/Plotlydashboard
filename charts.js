@@ -98,7 +98,8 @@ function buildCharts(sample) {
       mode: 'markers',
       marker: {
         size: sample_values,
-        sizemode:'area'
+        color: otu_ids,
+        colorscale: otu_ids
       }
 
     }
