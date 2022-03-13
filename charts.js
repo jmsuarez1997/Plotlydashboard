@@ -60,26 +60,15 @@ function buildCharts(sample) {
     // 3. Create a variable that holds the samples array. 
     var samples = data.samples;
     // 4. Create a variable that filters the samples for the object with the desired sample number.
-    var samplesfiltered = samples.filter(otu => otu.id === sample);
-
-    // 1. Create a variable that filters the metadata array for the object with the desired sample number.
-    var metadata = data.metadata;
-    var metadata = metadata.filter(otu => otu.id === sample);
+    var samplesfiltered = samples.filter(otu => otu.id == sample);
 
     //  5. Create a variable that holds the first sample in the array.
     var firstsample = samplesfiltered[0];
-
-    // 2. Create a variable that holds the first sample in the metadata array.
-    var firstmetadata = metadata[0];
 
     // 6. Create variables that hold the otu_ids, otu_labels, and sample_values.
     var otu_ids = firstsample.otu_ids;
     var otu_labels = firstsample.otu_lables;
     var sample_values = firstsample.sample_values;
-
-    // 3. Create a variable that holds the washing frequency.
-   //var washfrequency = firstmetadata.wfreq;
-   var washfrequency = parseFloat(firstmetadata.wfreq);
 
 
     // 7. Create the yticks for the bar chart.
@@ -132,6 +121,19 @@ function buildCharts(sample) {
     // 3. Use Plotly to plot the data with the layout.
     Plotly.newPlot("bubble", bubbleData, bubbleLayout); 
 
+    // 1. Create a variable that filters the metadata array for the object with the desired sample number.
+    //var metadata = data.metadata;
+    var metadata = data.metadata.filter(otu => otu.id == sample);
+    console.log(metadata);
+
+    // 2. Create a variable that holds the first sample in the metadata array.
+    var firstmetadata = metadata[0];
+    console.log(firstmetadata);
+    // 3. Create a variable that holds the washing frequency.
+   //var washfrequency = firstmetadata.wfreq;
+   var washfrequency = parseFloat(firstmetadata.wfreq);
+   console.log(washfrequency);
+
     // 4. Create the trace for the gauge chart.
     var gaugeData = [{
       domain: { x: [0, 1], y: [0, 1] },
@@ -148,7 +150,7 @@ function buildCharts(sample) {
           {range:[4,6], color: "yellow"},
           {range:[6,8], color: "yellowgreen"}, 
           {range:[8,10], color: "green"}
-        ],
+        ]
       }
 
     }];
