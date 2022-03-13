@@ -78,7 +78,7 @@ function buildCharts(sample) {
     var sample_values = firstsample.sample_values;
 
     // 3. Create a variable that holds the washing frequency.
-   var washfrequency = parseFloat(firstmetadata.wfreq);
+   var washfrequency = firstmetadata.wfreq;
 
     // 7. Create the yticks for the bar chart.
     // Hint: Get the the top 10 otu_ids and map them in descending order  
